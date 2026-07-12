@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/content_desc_camera_preview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.toushif.airdrawai.drawing.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Top status bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_status_pill"
+            android:text="@string/status_no_hand"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/fpsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_status_pill"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            tools:text="45 FPS" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="1dp" />
+
+        <ImageButton
+            android:id="@+id/btnSwitchCamera"
+            style="@style/ControlButton"
+            android:contentDescription="@string/content_desc_switch_camera"
+            android:src="@drawable/ic_switch_camera" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="1dp" />
+
+        <ImageButton
+            android:id="@+id/btnFlash"
+            style="@style/ControlButton"
+            android:contentDescription="@string/content_desc_flash_toggle"
+            android:src="@drawable/ic_flash_off" />
+    </LinearLayout>
+
+    <!-- Bottom control panel -->
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_control_panel"
+        android:paddingTop="@dimen/control_panel_padding"
+        android:paddingBottom="20dp"
+        android:paddingHorizontal="@dimen/control_panel_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Color picker row -->
+        <LinearLayout
+            android:id="@+id/colorPickerRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:contentDescription="@string/content_desc_color_picker" />
+
+        <!-- Brush size row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="4dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:contentDescription="@string/content_desc_brush_size"
+                android:src="@drawable/ic_brush"
+                app:tint="@color/white" />
+
+            <SeekBar
+                android:id="@+id/brushSizeSeekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_weight="1"
+                android:max="44"
+                android:progress="10"
+                android:progressTint="@color/md_theme_primary"
+                android:thumbTint="@color/md_theme_primary" />
+        </LinearLayout>
+
+        <!-- Action buttons row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnUndo"
+                style="@style/ControlButton"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/content_desc_undo"
+                android:src="@drawable/ic_undo" />
+
+            <ImageButton
+                android:id="@+id/btnRedo"
+                style="@style/ControlButton"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/content_desc_redo"
+                android:src="@drawable/ic_redo" />
+
+            <ImageButton
+                android:id="@+id/btnClear"
+                style="@style/ControlButton"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/content_desc_clear_canvas"
+                android:src="@drawable/ic_clear" />
+
+            <ImageButton
+                android:id="@+id/btnSave"
+                style="@style/ControlButton"
+                android:contentDescription="@string/content_desc_save_image"
+                android:src="@drawable/ic_save" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Permission rationale overlay -->
+    <LinearLayout
+        android:id="@+id/permissionOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_hand"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/permissionMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/permission_camera_rationale"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGrantPermission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/grant_permission" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

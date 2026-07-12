@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="control_panel_padding">12dp</dimen>
+    <dimen name="control_button_size">48dp</dimen>
+    <dimen name="color_swatch_size">36dp</dimen>
+    <dimen name="brush_min_size">4dp</dimen>
+    <dimen name="brush_max_size">48dp</dimen>
+    <dimen name="brush_default_size">14dp</dimen>
+    <dimen name="landmark_dot_radius">6dp</dimen>
+</resources>

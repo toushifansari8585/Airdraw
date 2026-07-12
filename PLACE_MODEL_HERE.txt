@@ -1,0 +1,8 @@
+Download hand_landmarker.task from:
+https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task
+
+and place it directly in this folder (app/src/main/assets/) so the final
+path is:
+  app/src/main/assets/hand_landmarker.task
+
+Then delete this placeholder file. See the project README for full details.

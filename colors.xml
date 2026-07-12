@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="md_theme_primary">#6750A4</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryContainer">#EADDFF</color>
+    <color name="md_theme_secondary">#625B71</color>
+    <color name="md_theme_background">#1C1B1F</color>
+    <color name="md_theme_surface">#1C1B1F</color>
+    <color name="md_theme_onSurface">#E6E1E5</color>
+    <color name="md_theme_surfaceVariant">#2B2930</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Brush palette -->
+    <color name="brush_red">#F44336</color>
+    <color name="brush_blue">#2196F3</color>
+    <color name="brush_green">#4CAF50</color>
+    <color name="brush_yellow">#FFEB3B</color>
+    <color name="brush_white">#FFFFFF</color>
+    <color name="brush_black">#000000</color>
+
+    <!-- UI accents -->
+    <color name="scrim_dark">#99000000</color>
+    <color name="control_panel_bg">#CC1C1B1F</color>
+    <color name="status_pause">#FFC107</color>
+    <color name="status_draw">#4CAF50</color>
+    <color name="status_erase">#FF5722</color>
+    <color name="selected_stroke">#FFFFFF</color>
